@@ -7,7 +7,9 @@ import {
   Patch,
   Post,
   Req,
+  UseGuards
 } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { Request } from 'express';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/user-update.dto';
@@ -16,6 +18,7 @@ import { UserService } from './user.service';
 @Controller('user')
 export class UserController {
   constructor(private userService: UserService) {}
+  @UseGuards(AuthGuard('jwt'))
   @Get()
   getUsers() {
     return this.userService.getUsers();
@@ -25,7 +28,7 @@ export class UserController {
   store(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
-
+  
   @Patch('/:userId')
   update(
     @Body() updateUserDto: UpdateUserDto,
