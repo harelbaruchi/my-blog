@@ -6,7 +6,6 @@ import { User } from './user/model/user.model';
 import { UserModule } from './user/user.module';
 import { AuthController } from './auth/auth.controller';
 import { AuthModule } from './auth/auth.module';
-import { ProfileModule } from './profile/profile.module';
 import { PostService } from './post/post.service';
 import { PostController } from './post/post.controller';
 import { PostModule } from './post/post.module';
@@ -28,7 +27,6 @@ import { Post } from './post/model/post.model';
 
   }),
   AuthModule,
-  ProfileModule,
   PostModule],
   controllers: [AppController],
   providers: [AppService],

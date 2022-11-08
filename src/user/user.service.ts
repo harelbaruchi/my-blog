@@ -1,7 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Request } from 'express';
-import { Repository } from 'typeorm';
 import {Sequelize} from 'sequelize-typescript'
 import {InjectModel} from '@nestjs/sequelize';
 import { CreateUserDto } from './dto/create-user.dto';

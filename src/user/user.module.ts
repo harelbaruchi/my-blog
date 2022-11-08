@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import {SequelizeModule} from '@nestjs/sequelize'
 import { User } from './model/user.model';
 import { UserController } from './user.controller';
